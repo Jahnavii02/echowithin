@@ -36,8 +36,7 @@ The application will open in your default browser at `http://localhost:8501/`
 
 ## Live Demo
 
-[Link to the hosted app] (Add your Streamlit Clq1oud or Hugging Face Spaces link here once deployed)
-
+https://echowithin.streamlit.app/
 ## License
 
 This project is licensed under the MIT License.
