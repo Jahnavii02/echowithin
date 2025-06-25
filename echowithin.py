@@ -4,10 +4,9 @@ import streamlit as st
 import random
 import datetime
 
-# --- PAGE CONFIG ---
 st.set_page_config(page_title="EchoWithin", layout="centered")
 
-# --- STYLE ---
+# STYLE 
 st.markdown("""
     <style>
     .big-font {
@@ -28,11 +27,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# --- TITLE ---
+#  TITLE 
 st.title("🌿 EchoWithin")
 st.markdown("_A quiet space to hear yourself again._")
 
-# --- QUOTE OF THE DAY ---
+#  QUOTE OF THE DAY
 quotes = [
     "You are not a drop in the ocean. You are the entire ocean in a drop. — Rumi",
     "The quieter you become, the more you are able to hear. — Ram Dass",
@@ -41,11 +40,11 @@ quotes = [
 ]
 st.markdown(f"✨ _Quote of the Day:_ **{random.choice(quotes)}**")
 
-# --- INPUT SECTION ---
+#  INPUT SECTION 
 st.markdown("### 📝 How are you feeling today?")
 user_input = st.text_area("Write here:", height=180, placeholder="I don't know what I'm feeling, but I want to understand...")
 
-# --- JOURNAL RESPONSE ---
+#  JOURNAL RESPONSE
 def generate_reflection(prompt):
     reflections = [
         f"🪞 Let's gently explore that: _What part of you is speaking the loudest right now?_",
@@ -55,7 +54,7 @@ def generate_reflection(prompt):
     ]
     return random.choice(reflections)
 
-# --- ON CLICK ---
+#  ON CLICK 
 if st.button("Reflect with EchoWithin"):
     if user_input.strip():
         st.markdown("### 🌿 EchoWithin Reflects:")
@@ -63,11 +62,11 @@ if st.button("Reflect with EchoWithin"):
     else:
         st.warning("Please write something to reflect on.")
 
-# --- JOURNAL EXPORT ---
+#  JOURNAL EXPORT 
 if user_input.strip():
     journal_entry = f"Date: {datetime.date.today()}\n\nYou wrote:\n{user_input}\n\nEchoWithin’s reflection:\n{generate_reflection(user_input)}"
     st.download_button("📥 Download Journal Entry", journal_entry, file_name="EchoWithin_Reflection.txt")
 
-# --- FOOTER ---
+#  FOOTER 
 st.markdown("---")
 st.markdown("🔒 Your reflections stay private. EchoWithin is a calm space for you alone.")
